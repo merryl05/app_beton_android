@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Béton</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculateur de Volume de Matériaux</h1>
+            <p class="subtitle">Calculez les quantités de matériaux nécessaires en fonction du volume désiré.</p>
+        </header>
+
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <h2 id="hero-title">Bienvenue</h2>
+                <p>Entrez le volume total désiré (en mètres cubes). Le calculateur estimera les volumes des composants nécessaires.</p>
+            </section>
+
+            <section class="explanation" aria-labelledby="explanation-title">
+                <h3 id="explanation-title">Comment ça marche ?</h3>
+                <p>Actuellement, le calculateur est configuré pour le béton avec un dosage standard de 350 kg de ciment par m³.</p>
+            </section>
+
+            <form id="calculatorForm" aria-labelledby="form-title">
+                <h2 id="form-title">Entrez vos données</h2>
+                
+                <div class="form-group">
+                    <label for="volume">Volume désiré (m³) :</label>
+                    <input type="number" id="volume" min="0" step="0.01" placeholder="Ex: 7" required aria-describedby="volume-help">
+                    <small id="volume-help">Entrez un volume en mètres cubes.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="material">Type de matériau :</label>
+                    <select id="material" required>
+                        <option value="concrete">Béton</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-calculate">Calculer</button>
+            </form>
+
+            <section id="results" role="region" aria-live="polite" aria-labelledby="results-title">
+                <h3 id="results-title">Résultats du calcul</h3>
+                <div id="resultContent"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Calculateur de Matériaux • Outil de pro</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
